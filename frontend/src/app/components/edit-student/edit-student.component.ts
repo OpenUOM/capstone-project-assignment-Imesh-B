@@ -9,7 +9,7 @@ import {AppServiceService} from '../../app-service.service';
 })
 export class EditStudentComponent implements OnInit {
 
-  studentData: any;
+  studentData: any=[];
 
 
   constructor(private service : AppServiceService, private router: Router) { }
