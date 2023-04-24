@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import {AppServiceService} from '../../app-service.service';
+import { AppServiceService } from '../../app-service.service';
 
 @Component({
   selector: 'app-edit-student',
@@ -9,10 +9,10 @@ import {AppServiceService} from '../../app-service.service';
 })
 export class EditStudentComponent implements OnInit {
 
-  studentData: any=[];
+  studentData: any;
 
 
-  constructor(private service : AppServiceService, private router: Router) { }
+  constructor(private service: AppServiceService, private router: Router) { }
 
   navigation = this.router.getCurrentNavigation();
 
@@ -20,24 +20,25 @@ export class EditStudentComponent implements OnInit {
     this.getStudentData();
   }
 
-  getStudentData(){
+  getStudentData() {
     let student = {
-      id : this.navigation.extras.state.id
+      id: this.navigation.extras.state.id
     }
-    this.service.getOneStudentData(student).subscribe((response)=>{
+    this.service.getOneStudentData(student).subscribe((response) => {
       this.studentData = response[0];
-    },(error)=>{
+    }, (error) => {
       console.log('ERROR - ', error)
     })
   }
 
-  editStudent(values){
+  editStudent(values) {
     values.id = this.navigation.extras.state.id;
-    this.service.editStudent(values).subscribe((response)=>{
+    this.service.editStudent(values).subscribe((response) => {
       this.studentData = response[0];
-    },(error)=>{
+    }, (error) => {
       console.log('ERROR - ', error)
     })
   }
 
 }
+

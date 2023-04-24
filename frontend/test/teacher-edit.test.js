@@ -21,3 +21,4 @@ test('Testing edit teachers', async t => {
 
     await t.click("#teacher-delete-10003");
 });
+

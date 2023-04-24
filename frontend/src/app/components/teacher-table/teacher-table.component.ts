@@ -12,7 +12,7 @@ export class TeacherTableComponent implements OnInit {
   faTrash = faTrash;
   faPlus = faPlus;
   faPenSquare = faPenSquare;
-  teacherData: any=[];
+  teacherData: any;
   selected: any;
 
   constructor(private service: AppServiceService, private router: Router) { }

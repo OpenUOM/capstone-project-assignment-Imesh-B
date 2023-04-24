@@ -32,3 +32,5 @@ export class AddNewStudentComponent implements OnInit {
   }
 
 }
+
+
